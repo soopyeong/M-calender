@@ -5,6 +5,20 @@ from django.db import models
 
 class Calendar(models.Model):
 
-    """Calendar Model"""
+    """Calendar Models"""
 
-    user = models.OneToOneField("users.User", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        "users.User", on_delete=models.CASCADE, related_name="calendar"
+    )
+    title = models.CharField(max_length=30, default="")
+    description = models.TextField(default="")
+
+
+class Symbol(models.Model):
+
+    """Symbol models"""
+
+    user = models.ForeignKey(
+        "users.User", on_delete=models.CASCADE, related_name="symbol_calendar"
+    )
+    symbol_calc_data = models.OneToOneField("data.SymbolData", on_delete=models.CASCADE)

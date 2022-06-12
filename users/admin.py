@@ -9,3 +9,10 @@ from . import models
 class CustomUserAdmin(UserAdmin):
 
     """Custom User Admin"""
+
+    fieldsets = UserAdmin.fieldsets + (
+        (
+            "",
+            {"fields": ("login_method",)},
+        ),
+    )

@@ -46,6 +46,7 @@ PROJECT_APPS = [
     "information.apps.InformationConfig",
     "calendars.apps.CalendarsConfig",
     "calculates.apps.CalculatesConfig",
+    "data.apps.DataConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
